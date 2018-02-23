@@ -1,0 +1,16 @@
+<% include partials/header %>
+
+<a href="/add-recipe" class="btn btn-default">Ajouter une recette</a>
+
+<section>
+
+    <% for(let item of content){ %>
+        <article>
+            <p><%= item.content %></p>
+            <form action="/api/delete-task/<%= item._id %>" method="post"><button type="submit">Supprimer</button></form>
+        </article>
+    <% } %>
+
+</section>
+
+<% include partials/footer %>
